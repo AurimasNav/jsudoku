@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Info') {
             steps {
-                echo '$HOME'
+                sh 'echo $HOME'
                 sh 'git --version'
                 sh 'ant -version'
             }
@@ -17,7 +17,7 @@ pipeline {
         stage('Build') {
             steps {
                 //placeholder for build actions if required
-                sh 'ant build'
+                sh 'ant'
             }
         }
         stage('Test') {
