@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+
+<project name="jsudoku" default="first">
+    <target name="first">
+        <echo message="first target!" />
+    </target>
+    <target name="second" depends="first">
+        <echo message="second target!" />
+    </target>
+</project>
