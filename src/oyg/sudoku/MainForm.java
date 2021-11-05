@@ -2,7 +2,7 @@ package oyg.sudoku;
 /*
  * MainForm.java
  *
- * Created on 1 יולי 2005, 11:23
+ * Created on 1 2005, 11:23
  */
 
 
