@@ -1,10 +1,27 @@
 <?xml version="1.0" ?>
 
-<project name="jsudoku" default="first">
-    <target name="first">
-        <echo message="first target!" />
+<project name="jsudoku" default="jarfile">
+    <target name="init" description="Initializes properties">
+        <property name="project.name" value="jsudoku" />
+        <property name="src.dir" value="src" />
+        <property name="build.dir" value="build" />
+        <property name="classes.dir" value="${build.dir}/classes" />
     </target>
-    <target name="second" depends="first">
-        <echo message="second target!" />
+    <target name="prepare" description="creates directories" depends="init">
+        <mkdir dir="${classes.dir}" />
+    </target>
+
+    <target name="compile" description="Compiles the code" depends="prepare">
+        <javac srcdir="${src.dir}"
+            destdir="${classes.dir}" />
+    </target>
+
+    <target name="jarfile"  description="creates jar" depends="compile">
+        <jar destfile="${build.dir}/${project.name}.jar"
+            basedir="${classes.dir}"/>
+    </target>
+
+    <target name="clean" description="Delete the build directory" depends="init">
+        <delete dir="${build.dir}" />
     </target>
 </project>
