@@ -7,11 +7,17 @@ pipeline {
         timeout(time: 15, unit: 'MINUTES')
     }
     stages {
+        stage('Info') {
+            steps {
+                echo '$HOME'
+                sh 'git --version'
+                sh 'ant -version'
+            }
+        }
         stage('Build') {
             steps {
                 //placeholder for build actions if required
-                echo 'build stage 123'
-                sh 'ant -version'
+                sh 'ant build'
             }
         }
         stage('Test') {
