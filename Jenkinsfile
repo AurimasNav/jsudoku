@@ -6,8 +6,6 @@ pipeline {
         //configure timeout for pipeline
         timeout(time: 15, unit: 'MINUTES')
     }
-    environment {
-	}
     stages {
         stage('Build') {
             steps {
