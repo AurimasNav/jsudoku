@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 //placeholder for build actions if required
-                ehco 'build stage'
+                ehco 'build stage 123'
             }
         }
         stage('Test') {
