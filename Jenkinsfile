@@ -11,6 +11,7 @@ pipeline {
             steps {
                 //placeholder for build actions if required
                 echo 'build stage 123'
+                sh 'ant -version'
             }
         }
         stage('Test') {
