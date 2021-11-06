@@ -1,3 +1,4 @@
+build/
 .mtj.tmp/
 *.class
 *.jar
