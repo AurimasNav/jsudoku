@@ -16,18 +16,19 @@ pipeline {
         }
         stage('Build') {
             steps {
-                //placeholder for build actions if required
+                //not calling any cleanup tasks with ant since this is running on ephemeral build agent
                 sh 'ant'
             }
         }
-        stage('Test') {
+        stage('Report') {
             steps {
-                echo 'test stage'
+                //publish checkstyle report
+                recordIssues enabledForFailure: true, tool: checkStyle()
             }
         }
         stage('Deploy') {
             when {
-                branch 'production'
+                branch 'main'
             }
             steps {
                 echo 'deploy something when running on production branch'
